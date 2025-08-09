@@ -63,7 +63,7 @@ class Struct(Scope, Symbol, Type):
         return symbols[name]
 ```
 
-=\> Auflösen von “`a.b`” (im Listener in `exitMember()`):
+=\> Auflösen von “`a.b`”(im Listener in `exitMember()`):
 
 - `a` im “normalen” Modus mit `resolve()` über den aktuellen Scope
 - Typ von `a` ist `Struct` mit Verweis auf den eigenen Scope
@@ -214,7 +214,8 @@ die Klasse auflöst und `x` als Attribut darin.
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k3: Aufbau von Symboltabellen für Nested Scopes inkl. Strukturen/Klassen mit einem Listener
+> - k3: Aufbau von Symboltabellen für Nested Scopes inkl.
+>   Strukturen/Klassen mit einem Listener
 > - k3: Attribute von Klassen und Strukturen auflösen
 >
 > </details>
@@ -310,10 +311,10 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 **Exceptions:**
 
 - Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 162)
+  p. 167)
 - Eigene Implementierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
   p. 172)
 - Eigene Modellierung nach einer Idee in ([Parr 2010](#ref-Parr2010),
-  p. 167)
+  p. 162)
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 568b03e (Remove Hugo: tooling: shift headings (use h1 as top-level headings), 2025-07-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>

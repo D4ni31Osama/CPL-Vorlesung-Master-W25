@@ -41,4 +41,4 @@ Gips](https://github.com/cagix), and various
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 568b03e (Remove Hugo: tooling: shift headings (use h1 as top-level headings), 2025-07-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>

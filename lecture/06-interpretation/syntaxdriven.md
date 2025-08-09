@@ -406,8 +406,10 @@ public class TestMyVisitor {
 > <summary><strong>✅ Lernziele</strong></summary>
 >
 > - k3: Attribute und eingebettete Aktionen in Bison und ANTLR
-> - k3: Traversierung von Parse-Trees und Implementierung von Aktionen mit Hilfe des Listener-Patterns
-> - k3: Traversierung von Parse-Trees und Implementierung von Aktionen mit Hilfe des Visitor-Patterns
+> - k3: Traversierung von Parse-Trees und Implementierung von Aktionen
+>   mit Hilfe des Listener-Patterns
+> - k3: Traversierung von Parse-Trees und Implementierung von Aktionen
+>   mit Hilfe des Visitor-Patterns
 >
 > </details>
 
@@ -460,4 +462,4 @@ public class TestMyVisitor {
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 568b03e (Remove Hugo: tooling: shift headings (use h1 as top-level headings), 2025-07-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>

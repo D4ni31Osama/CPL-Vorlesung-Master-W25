@@ -450,10 +450,12 @@ T t'(T inh) {
 >
 > <summary><strong>✅ Lernziele</strong></summary>
 >
-> - k2: Konzept der attributierten Grammatiken: Anreicherung mit Attributen und semantischen Regeln
+> - k2: Konzept der attributierten Grammatiken: Anreicherung mit
+>   Attributen und semantischen Regeln
 > - k2: Unterschied zwischen geerbten und berechneten Attributen
 > - k2: Umsetzung von SDD mit Hilfe von SDT
-> - k3: Einfache semantische Analyse mit Hilfe von attributierten Grammatiken
+> - k3: Einfache semantische Analyse mit Hilfe von attributierten
+>   Grammatiken
 >
 > </details>
 
@@ -493,4 +495,4 @@ T t'(T inh) {
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> af5ea93 (lecture: add slide numbering to bc's slides, 2025-07-29)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>
