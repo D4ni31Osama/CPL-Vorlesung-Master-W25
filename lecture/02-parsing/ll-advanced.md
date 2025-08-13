@@ -433,8 +433,8 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 - Eigener Code basierend auf einer Idee nach ([Parr
   2010](#ref-Parr2010), p. 60)
 - Eigener Code basierend auf einer Idee nach ([Parr
-  2010](#ref-Parr2010), pp. 65/66)
-- Eigener Code basierend auf einer Idee nach ([Parr
   2010](#ref-Parr2010), pp. 61/62)
+- Eigener Code basierend auf einer Idee nach ([Parr
+  2010](#ref-Parr2010), pp. 65/66)
 
 <blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>
