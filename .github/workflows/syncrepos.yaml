@@ -21,9 +21,9 @@ jobs:
       - name: Checkout external lecture-repo (_gfm branch)
         uses: actions/checkout@v5
         with:
-          repository: Compiler-CampusMinden/CB-Vorlesung-Master    ## TODO (org/repo)
+          repository: Compiler-CampusMinden/CPL-Vorlesung-Master    ## TODO (org/repo)
           fetch-depth: 0
-          ref: _w25                                                ## TODO (branch)
+          ref: _w25                                                 ## TODO (branch)
           path: _gfm
       - name: Retrieve last commit message from lecture-repo
         id: message
