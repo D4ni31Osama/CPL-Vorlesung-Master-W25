@@ -16,7 +16,7 @@
 > wird ein Strom von Wörtern (Token), daraus ein Baum (Parse Tree),
 > Zwischencode (IC), …
 >
-> <img src="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/lecture/00-intro/images/architektur_cb.png?raw=true">
+> <img src="https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/lecture/00-intro/images/architektur_cb.png?raw=true">
 >
 > Die gezeigten Phasen werden traditionell unterschieden. Je nach
 > Aufgabe können verschiedene Stufen zusammengefasst werden oder sogar
@@ -451,4 +451,4 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b3a3e7 (tooling: rename repo from 'cb-lecture' to 'cpl-lecture', 2025-08-13)<br></sub></sup></p></blockquote>

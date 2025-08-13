@@ -6,7 +6,7 @@
 >
 > <summary><strong>🎯 TL;DR</strong></summary>
 >
-> <img src="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/lecture/02-parsing/images/architektur_cb_parser.png?raw=true">
+> <img src="https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/lecture/02-parsing/images/architektur_cb_parser.png?raw=true">
 >
 > Man kann einen LL(k)-Parser bei Bedarf um ein “spekulatives Matching”
 > ergänzen. Dies ist in Situationen relevant, wo man das $`k`$ nicht
@@ -431,10 +431,10 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 **Exceptions:**
 
 - Eigener Code basierend auf einer Idee nach ([Parr
-  2010](#ref-Parr2010), p. 60)
-- Eigener Code basierend auf einer Idee nach ([Parr
   2010](#ref-Parr2010), pp. 61/62)
+- Eigener Code basierend auf einer Idee nach ([Parr
+  2010](#ref-Parr2010), p. 60)
 - Eigener Code basierend auf einer Idee nach ([Parr
   2010](#ref-Parr2010), pp. 65/66)
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b3a3e7 (tooling: rename repo from 'cb-lecture' to 'cpl-lecture', 2025-08-13)<br></sub></sup></p></blockquote>

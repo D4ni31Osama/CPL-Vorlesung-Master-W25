@@ -17,7 +17,7 @@
 > Der Wert von Literalen ergibt sich direkt durch die Übersetzung des
 > jeweiligen Werts in den passenden Typ der Implementierungssprache. Bei
 > einfachen Ausdrücken kann man auf das in [Syntaxgesteuerte
-> Interpreter](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/lecture/06-interpretation/syntaxdriven.md)
+> Interpreter](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/lecture/06-interpretation/syntaxdriven.md)
 > demonstrierte Vorgehen zurückgreifen: Man interpretiert zunächst die
 > Teilausdrücke durch den Aufruf von `eval()` für die jeweiligen
 > AST-Kindknoten und berechnet daraus das gewünschte Ergebnis.
@@ -438,4 +438,4 @@ Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
   by [Bob Nystrom](https://github.com/munificent) on Github.com
   ([MIT](https://github.com/munificent/craftinginterpreters/blob/master/LICENSE))
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b3a3e7 (tooling: rename repo from 'cb-lecture' to 'cpl-lecture', 2025-08-13)<br></sub></sup></p></blockquote>

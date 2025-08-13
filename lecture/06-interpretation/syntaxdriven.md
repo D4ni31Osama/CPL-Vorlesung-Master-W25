@@ -9,7 +9,7 @@
 > Zur Einordnung noch einmal die bisher betrachteten Phasen und die
 > jeweiligen Ergebnisse:
 >
-> <img src="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/lecture/06-interpretation/images/architektur_cb.png?raw=true">
+> <img src="https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/lecture/06-interpretation/images/architektur_cb.png?raw=true">
 >
 > |  | Phase | Ergebnis |
 > |:---|:---|:---|
@@ -40,9 +40,9 @@
 > Visitor-Pattern. Für nicht so einfache Fälle braucht man aber
 > zusätzlich noch Speicherstrukturen, die wir in [AST-basierte
 > Interpreter:
-> Basics](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/lecture/06-interpretation/astdriven-part1.md)
+> Basics](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/lecture/06-interpretation/astdriven-part1.md)
 > und [AST-basierte Interpreter: Funktionen und
-> Klassen](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/lecture/06-interpretation/astdriven-part2.md)
+> Klassen](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/lecture/06-interpretation/astdriven-part2.md)
 > betrachten.
 >
 > </details>
@@ -313,7 +313,7 @@ public class TestMyListener {
 }
 ```
 
-<p align="right"><a href="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/lecture/06-interpretation/src/TestMyListener.java">Beispiel: TestMyListener.java und calc.g4</a></p>
+<p align="right"><a href="https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/lecture/06-interpretation/src/TestMyListener.java">Beispiel: TestMyListener.java und calc.g4</a></p>
 
 ### ANTLR: Arbeiten mit dem Visitor-Pattern
 
@@ -378,7 +378,7 @@ public class TestMyVisitor {
 }
 ```
 
-<p align="right"><a href="https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/lecture/06-interpretation/src/TestMyVisitor.java">Beispiel: TestMyVisitor.java und calc.g4</a></p>
+<p align="right"><a href="https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/lecture/06-interpretation/src/TestMyVisitor.java">Beispiel: TestMyVisitor.java und calc.g4</a></p>
 
 ## Wrap-Up
 
@@ -462,4 +462,4 @@ public class TestMyVisitor {
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b3a3e7 (tooling: rename repo from 'cb-lecture' to 'cpl-lecture', 2025-08-13)<br></sub></sup></p></blockquote>

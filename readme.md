@@ -195,13 +195,13 @@ englischer Sprache durchgeführt.)
 <img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
 
 Unless otherwise noted, [this
-work](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master) by
+work](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master) by
 [BC George](https://github.com/bcg7), [Carsten
 Gips](https://github.com/cagix) and
-[contributors](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/graphs/contributors)
+[contributors](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/graphs/contributors)
 is licensed under [CC BY-SA
-4.0](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/blob/master/LICENSE.md).
+4.0](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/LICENSE.md).
 See the [credits](CREDITS.md) for a detailed list of contributing
 projects.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b3a3e7 (tooling: rename repo from 'cb-lecture' to 'cpl-lecture', 2025-08-13)<br></sub></sup></p></blockquote>

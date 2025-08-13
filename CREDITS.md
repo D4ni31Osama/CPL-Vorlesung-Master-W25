@@ -29,11 +29,11 @@ project.
 ## Contributors
 
 [This
-project](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master)
+project](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master)
 has been created and is being maintained by the authors [BC
 George](https://github.com/bcg7), and [Carsten
 Gips](https://github.com/cagix), and various
-[contributors](https://github.com/Compiler-CampusMinden/CB-Vorlesung-Master/graphs/contributors).
+[contributors](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/graphs/contributors).
 
 ------------------------------------------------------------------------
 
@@ -41,4 +41,4 @@ Gips](https://github.com/cagix), and various
 
 Unless otherwise noted, this work is licensed under CC BY-SA 4.0.
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 1c01cef (markdown: switch to leaner yaml header (#253), 2025-08-09)<br></sub></sup></p></blockquote>
+<blockquote><p><sup><sub><strong>Last modified:</strong> 5b3a3e7 (tooling: rename repo from 'cb-lecture' to 'cpl-lecture', 2025-08-13)<br></sub></sup></p></blockquote>
